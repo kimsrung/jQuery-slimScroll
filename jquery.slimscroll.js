@@ -374,7 +374,11 @@
           }
 
           // scroll content
-          me.scrollTop(delta);
+          if (o.animate){
+            me.animate({ scrollTop: delta });
+          }else{
+            me.scrollTop(delta);
+          }
 
           // fire scrolling event
           me.trigger('slimscrolling', ~~delta);
